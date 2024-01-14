@@ -1,8 +1,15 @@
 services:
   bind9:
-    image: ubuntu/bind9
-    container_name: bind9
+    image: ubuntu/bind9:latest
     restart: always
     ports:
-      - "53:53"
       - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - "./volumes/bind_etc/named.conf.local:/etc/bind/named.conf.local:ro"
+      - "./volumes/bind_etc/named.conf.options:/etc/bind/named.conf.options:ro"
+      - "./volumes/bind_var_cache:/var/cache/bind:rw"
+      - "./volumes/bind_var_lib:/var/lib/bind:rw"
+    environment:
+      - "TZ=Asia/Tokyo"
+      - "BIND9_USER=bind"
