@@ -6,10 +6,10 @@ services:
       - "30053:53/udp"
       - "30053:53/tcp"
     volumes:
-      - "./volumes/bind_etc/named.conf.local:/etc/bind/named.conf.local:ro"
-      - "./volumes/bind_etc/named.conf.options:/etc/bind/named.conf.options:ro"
-      - "./volumes/bind_var_cache:/var/cache/bind:rw"
-      - "./volumes/bind_var_lib:/var/lib/bind:rw"
+      - "./bind_etc/named.conf.local:/etc/bind/named.conf.local:ro"
+      - "./bind_etc/named.conf.options:/etc/bind/named.conf.options:ro"
+      - "./bind_etc/volumes/bind_var_cache:/var/cache/bind:rw"
+      - "./bind_etc/volumes/bind_var_lib:/var/lib/bind:rw"
     environment:
       - "TZ=Asia/Tokyo"
       - "BIND9_USER=bind"
