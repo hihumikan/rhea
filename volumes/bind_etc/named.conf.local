@@ -1,0 +1,10 @@
+zone "example.com" IN {
+  type master;
+  file "example.com.zone";
+};
+
+zone "rpz" {
+  type master;
+  file "rpz.zone";
+  allow-query { none; };
+};
