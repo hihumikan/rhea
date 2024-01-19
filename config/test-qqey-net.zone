@@ -1,0 +1,17 @@
+$TTL 2d
+
+$ORIGIN test.qqey.net.
+
+@             IN     SOA    ns.test.qqey.net. info.test.qqey.net (
+                            2022121900     ; serial
+                            12h            ; refresh
+                            15m            ; retry
+                            3w             ; expire
+                            2h )           ; minimum TTL
+
+              IN     NS     ns.test.qqey.net.
+
+ns            IN     A      10.20.3.4
+
+srv-demo-2    IN     A      10.20.3.4
+*.srv-demo-2  IN     A      10.20.3.4
